@@ -1,17 +1,68 @@
-import React from "react";
-import { IconButton, InputBase, Box } from "@mui/material";
+import React, { useState } from "react";
+import { IconButton, InputBase, Box, Drawer } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MicIcon from "@mui/icons-material/Mic";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setOpen(!open);
+  };
+
+  const list = () => (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer}
+      onKeyDown={toggleDrawer}
+    >
+      <List>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+            paddingLeft: "15px",
+          }}
+        >
+          <YouTubeIcon sx={{ color: "red", fontSize: 28 }} />
+          <Box component="span" sx={{ fontSize: 20, fontWeight: 700, pl: 0.5 }}>
+            YouTube
+          </Box>
+        </Box>
+        {[
+          "Главная",
+          "Shorts",
+          "Подписки",
+          "История",
+          "Плейлисты",
+          "Ваши видео",
+          "Смотреть позже",
+          "Понравившиеся",
+          "Скачанные",
+        ].map((text) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <Box
       sx={{
-        // bgcolor: "red",
         color: "white",
         display: "flex",
         alignItems: "center",
@@ -30,9 +81,16 @@ const Navbar = () => {
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <IconButton sx={{ mr: 2, color: "white" }} aria-label="menu">
+          <IconButton
+            sx={{ mr: 2, color: "white" }}
+            aria-label="menu"
+            onClick={toggleDrawer}
+          >
             <MenuIcon />
           </IconButton>
+          <Drawer anchor="left" open={open} onClose={toggleDrawer}>
+            {list()}
+          </Drawer>
           <Box
             sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
           >
@@ -51,7 +109,6 @@ const Navbar = () => {
             alignItems: "center",
             width: 600,
             height: 40,
-            // bgcolor: "rgba(255, 255, 255, 0.15)",
             borderRadius: 25,
             border: "1px solid rgba(255, 255, 255, 0.1)",
             p: "2px 6px",
