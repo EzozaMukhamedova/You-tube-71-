@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.videoLeft {
+  margin: 20px 20px 20px 80px;
+  width: 60%;
+}
+.videoRight {
+  /* background: yellow; */
+  width: calc(100% - 60% - 80px);
+}
+
+.miniContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.miniVideos {
+  width: 80%;
+  /* display: flex; */
+  max-width: 200px;
+  /* height: 100px; */
+  /* background-color: brown; */
+}

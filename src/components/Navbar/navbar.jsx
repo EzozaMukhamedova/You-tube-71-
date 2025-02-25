@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <Box
       sx={{
-        bgcolor: "transparent",
+        // bgcolor: "red",
         color: "white",
         display: "flex",
         alignItems: "center",

@@ -26,77 +26,221 @@ export default function Video() {
   return (
     <>
       <Navbar />
-      <Card
-        sx={{
-          maxWidth: "none",
-          height: "auto",
-          bgcolor: "background.paper",
-          m: "auto",
-          mt: 4,
-          display: "flex",
-          bgcolor: "#000",
-          // borderRadius: "15px",
-          // overflow: "hidden",
-          flexDirection: "column",
-          boxShadow: 3,
-        }}
-      >
-        <CardMedia
-          component="video"
-          controls
-          autoPlay
-          sx={{
-            height: 624,
-            width: 870,
-            margin: "left",
-            borderRadius: "15px",
-            marginLeft: "120px",
-            alignItems: "center",
-            justifyContent: "center",
-            // padding: 120,
-          }}
-          src={video?.videoUrl}
-          alt="Video thumbnail"
-        />
-        <CardContent sx={{ p: 2 }}>
-          <Typography
-            variant="h5"
-            component="div"
-            sx={{ color: "text.primary", marginLeft: "105px" }}
-          >
-            {video?.title}
-          </Typography>
-          <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
-            <IconButton
-              aria-label="play"
-              sx={{ color: red[500], marginLeft: "90px" }}
-            >
-              <PlayArrowIcon />
-            </IconButton>
-            <Typography
-              variant="subtitle1"
-              sx={{ ml: 1, color: "text.secondary" }}
-            >
-              {video?.views} Views
-            </Typography>
-          </Box>
-          <Typography
-            variant="body2"
+      <div style={{ display: "flex" }}>
+        <div className="videoLeft">
+          <Box
             sx={{
-              color: "text.secondary",
-              mt: 1,
-              marginLeft: "105px",
-              bgcolor: "#191919",
-              width: "870px",
-              borderRadius: "10px",
-              height: "200px",
-              padding: "12px",
+              maxWidth: "none",
+              height: "auto",
+              // bgcolor: "background.paper",
+              bgcolor: "transparent",
             }}
           >
-            {video?.description}
-          </Typography>
-        </CardContent>
-      </Card>
+            <CardMedia
+              component="video"
+              controls
+              autoPlay
+              sx={{
+                marginTop: "50px",
+                width: "100%",
+                borderRadius: "16px",
+              }}
+              src={video?.videoUrl}
+              alt="Video thumbnail"
+            />
+            <CardContent sx={{ padding: "0", marginTop: "20px" }}>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{ color: "text.primary" }}
+              >
+                {video?.title}
+              </Typography>
+              <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
+                <IconButton aria-label="play" sx={{ color: red[500] }}>
+                  <PlayArrowIcon />
+                </IconButton>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ ml: 1, color: "text.secondary" }}
+                >
+                  {video?.views} Views
+                </Typography>
+              </Box>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "text.secondary",
+                  mt: 1,
+                  bgcolor: "#191919",
+                  width: "100%",
+                  borderRadius: "10px",
+                  padding: "12px",
+                }}
+              >
+                {video?.description}
+              </Typography>
+            </CardContent>
+          </Box>
+        </div>
+        <div className="videoRight">
+          <div className="miniContainer">
+            <div className="miniVideos">
+              <CardMedia
+                component="video"
+                sx={{
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
+                src={video?.videoUrl}
+                alt="Video thumbnail"
+              />
+              <Typography
+                component="div"
+                sx={{
+                  color: "text.primary",
+                  fontSize: "12px",
+                  padding: "10px",
+                }}
+              >
+                {video?.title}
+              </Typography>
+            </div>
+
+            <div className="miniVideos">
+              <CardMedia
+                component="video"
+                sx={{
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
+                src={video?.videoUrl}
+                alt="Video thumbnail"
+              />
+              <Typography
+                component="div"
+                sx={{
+                  color: "text.primary",
+                  fontSize: "12px",
+                  padding: "10px",
+                }}
+              >
+                {video?.title}
+              </Typography>
+            </div>
+
+            <div className="miniVideos">
+              <CardMedia
+                component="video"
+                sx={{
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
+                src={video?.videoUrl}
+                alt="Video thumbnail"
+              />
+              <Typography
+                component="div"
+                sx={{
+                  color: "text.primary",
+                  fontSize: "12px",
+                  padding: "10px",
+                }}
+              >
+                {video?.title}
+              </Typography>
+            </div>
+
+            <div className="miniVideos">
+              <CardMedia
+                component="video"
+                sx={{
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
+                src={video?.videoUrl}
+                alt="Video thumbnail"
+              />
+              <Typography
+                component="div"
+                sx={{
+                  color: "text.primary",
+                  fontSize: "12px",
+                  padding: "10px",
+                }}
+              >
+                {video?.title}
+              </Typography>
+            </div>
+
+            <div className="miniVideos">
+              <CardMedia
+                component="video"
+                sx={{
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
+                src={video?.videoUrl}
+                alt="Video thumbnail"
+              />
+              <Typography
+                component="div"
+                sx={{
+                  color: "text.primary",
+                  fontSize: "12px",
+                  padding: "10px",
+                }}
+              >
+                {video?.title}
+              </Typography>
+            </div>
+
+            <div className="miniVideos">
+              <CardMedia
+                component="video"
+                sx={{
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
+                src={video?.videoUrl}
+                alt="Video thumbnail"
+              />
+              <Typography
+                component="div"
+                sx={{
+                  color: "text.primary",
+                  fontSize: "12px",
+                  padding: "10px",
+                }}
+              >
+                {video?.title}
+              </Typography>
+            </div>
+
+            <div className="miniVideos">
+              <CardMedia
+                component="video"
+                sx={{
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
+                src={video?.videoUrl}
+                alt="Video thumbnail"
+              />
+              <Typography
+                component="div"
+                sx={{
+                  color: "text.primary",
+                  fontSize: "12px",
+                  padding: "10px",
+                }}
+              >
+                {video?.title}
+              </Typography>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
